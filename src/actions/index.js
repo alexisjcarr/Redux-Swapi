@@ -11,10 +11,10 @@ export const getCharacters = () => dispatch => {
   axios
     .get("https://swapi.co/api/people/")
     .then(res => {
-      console.log(res);
+      console.log("response", res.data.results);
       dispatch({
         type: FETCH_CHARACTERS_SUCCESS,
-        payload: res.data
+        payload: res.data.results,
       });
     })
     .catch(err => {
