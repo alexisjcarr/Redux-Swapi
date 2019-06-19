@@ -9,7 +9,7 @@ export const getCharacters = () => dispatch => {
     type: FETCH_CHARACTERS_START
   });
   axios
-    .get("https://swapi.co/api/people/")
+    .get("https://swapi.co/api/people")
     .then(res => {
       console.log("response", res.data.results);
       dispatch({
