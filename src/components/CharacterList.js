@@ -1,15 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 
 import Character from "./Character";
 
-const CharacterList = props => {
-  return (
-    <ul>
-      {props.characters.map(character => {
-        return <Character key={character.name} character={character} />;
-      })}
-    </ul>
-  );
-};
+class CharacterList extends Component {
+  render() {
+    return (
+      <div>
+        <ul>
+          {this.props.characters.map(character => {
+            return <Character key={character.name} character={character.name} />;
+          })}
+        </ul>
+      </div>
+    );
+  }
+}
 
 export default CharacterList;
